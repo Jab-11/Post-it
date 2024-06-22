@@ -1,16 +1,1 @@
-{
-    "posts": [
-        {
-            "title": "Welcome",
-            "desc": "Welcome to Post-it",
-            "author": "Creator",
-            "id": "0.12006348509905274"
-        },
-        {
-            "title": "How to use?",
-            "desc": "Just Click New Post and add new posts.",
-            "author": "Creator",
-            "id": "0.5932082591717465"
-        }
-    ]
-}
+{"posts":[{"title":"Post it","desc":"Post it","author":"Dev Patel","id":"0.13505107429836816"},{"title":"Welcome","desc":"Welcome to Post-it","author":"Creator","id":"0.12006348509905274"},{"title":"How to use?","desc":"Just Click New Post and add new posts.","author":"Creator","id":"0.5932082591717465"}]}

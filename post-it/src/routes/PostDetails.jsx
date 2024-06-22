@@ -1,43 +1,44 @@
-import { useLoaderData, Link } from 'react-router-dom';
+import { useLoaderData, Link } from "react-router-dom";
 
-import Modal from '../components/Modal';
-import classes from './PostDetails.module.css';
+import Modal from "../components/Modal";
+import classes from "./PostDetails.module.css";
 
 function PostDetails() {
-  const post = useLoaderData();
+    const post = useLoaderData();
 
-  if (!post) {
+    if (!post) {
+        return (
+            <Modal>
+                <main className={classes.details}>
+                    <h1>Could not find post</h1>
+                    <p>Unfortunately, the requested post could not be found.</p>
+                    <p>
+                        <Link to=".." className={classes.btn}>
+                            Okay
+                        </Link>
+                    </p>
+                </main>
+            </Modal>
+        );
+    }
     return (
-      <Modal>
-        <main className={classes.details}>
-          <h1>Could not find post</h1>
-          <p>Unfortunately, the requested post could not be found.</p>
-          <p>
-            <Link to=".." className={classes.btn}>
-              Okay
-            </Link>
-          </p>
-        </main>
-      </Modal>
+        <Modal>
+            <main className={classes.details}>
+                <p className={classes.title}>{post.title}</p>
+                <p className={classes.text}>{post.desc}</p>
+                <p className={classes.author}>{"- " + post.author}</p>
+            </main>
+        </Modal>
     );
-  }
-  return (
-    <Modal>
-      <main className={classes.details}>
-        <p className={classes.title}>{post.title}</p>
-        <p className={classes.text}>{post.desc}</p>
-        <p className={classes.author}>{"- " + post.author}</p>
-      </main>
-    </Modal>
-  );
 }
 
 export default PostDetails;
 
-export async function loader({params}){
+export async function loader({ params }) {
     console.log(params.postId);
-    const response = await fetch('https://post-it-beta.vercel.app/posts/'+params.postId);
+    const response = await fetch(
+        "http://localhost:8080/posts/" + params.postId
+    );
     const resData = await response.json();
-    console.log(resData.post);
     return resData.post;
 }
