@@ -12,9 +12,4 @@
       "dest": "/index.html"
     }
   ],
-  "framework": {
-    "name": "react",
-    "buildCommand": "npm run build",
-    "outputDirectory": "frontend/build"
-  }
 }
