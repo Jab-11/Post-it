@@ -2,7 +2,8 @@ const fs = require("fs");
 const path = require("path");
 
 async function getStoredPosts() {
-    const filePath = path.join(__dirname, "dummy_backend/posts.json");
+    const filePath = path.join(__dirname, "posts.json");
+    console.log(filePath);
 
     try {
         const rawFileContent = await fs.readFileSync(filePath, {
