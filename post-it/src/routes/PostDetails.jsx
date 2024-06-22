@@ -35,9 +35,8 @@ function PostDetails() {
 export default PostDetails;
 
 export async function loader({ params }) {
-    console.log(params.postId);
     const response = await fetch(
-        "https://post-it-backend-ivory.vercel.app/posts/" + params.postId
+        "http://localhost:8080/posts/" + params.postId
     );
     const resData = await response.json();
     return resData.post;

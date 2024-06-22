@@ -34,14 +34,18 @@ function NewPost() {
 export default NewPost;
 
 export async function action({ request }) {
-    const postData = new FormData();
-    postData.append("title", title);
-    postData.append("desc", body);
-    postData.append("author", name);
+    const formData = await request.formData();
+    const title = formData.get("title");
+    const desc = formData.get("desc");
+    const author = formData.get("author");
 
     try {
-        const res = await axios.post("http://localhost:8080/posts", postData, {
-            headers: { "Content-Type": "multipart/form-data" },
+        const res = await axios.post("http://localhost:8080/posts", {
+            postData: {
+                title,
+                desc,
+                author,
+            },
         });
     } catch (error) {
         console.log(error);
