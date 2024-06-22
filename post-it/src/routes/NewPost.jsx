@@ -43,7 +43,7 @@ export async function action({request}){
   const formData = await request.formData();
   const postData = Object.fromEntries(formData);
   
-  await fetch("http://localhost:8080/posts", {
+  await fetch("https://post-it-beta.vercel.app/posts", {
     method: "POST",
     body: JSON.stringify(postData),
     headers: {
