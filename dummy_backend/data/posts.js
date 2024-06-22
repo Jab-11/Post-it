@@ -24,7 +24,7 @@ async function getStoredPosts() {
 
 function storePosts(posts) {
     return fs.writeFileSync(
-        path.join(__dirname, "dummy_backend/posts.json"),
+        path.join(__dirname, "posts.json"),
         JSON.stringify({ posts: posts || [] })
     );
 }

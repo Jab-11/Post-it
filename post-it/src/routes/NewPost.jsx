@@ -1,5 +1,6 @@
 import classes from "./NewPost.module.css";
 import Modal from "../components/Modal";
+import axios from "axios";
 
 import { Link, Form, redirect } from "react-router-dom";
 
@@ -33,16 +34,18 @@ function NewPost() {
 export default NewPost;
 
 export async function action({ request }) {
-    const formData = await request.formData();
-    const postData = Object.fromEntries(formData);
+    const postData = new FormData();
+    postData.append("title", title);
+    postData.append("desc", body);
+    postData.append("author", name);
 
-    await fetch("https://post-it-backend-ivory.vercel.app/posts", {
-        method: "POST",
-        body: JSON.stringify(postData),
-        headers: {
-            "Content-Type": "application/json",
-        },
-    });
+    try {
+        const res = await axios.post("http://localhost:8080/posts", postData, {
+            headers: { "Content-Type": "multipart/form-data" },
+        });
+    } catch (error) {
+        console.log(error);
+    }
 
     return redirect("/");
 }
