@@ -40,7 +40,7 @@ export async function action({ request }) {
     const author = formData.get("author");
 
     try {
-        const res = await axios.post("http://localhost:8080/posts", {
+        const res = await axios.post("https://post-it-hazel.vercel.app/posts", {
             postData: {
                 title,
                 desc,

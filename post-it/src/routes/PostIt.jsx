@@ -16,7 +16,7 @@ function PostIt() {
 export default PostIt;
 
 export async function loader() {
-    const response = await axios.get("http://localhost:8080/posts");
+    const response = await axios.get("https://post-it-hazel.vercel.app/posts");
 
     return response.data;
 }
