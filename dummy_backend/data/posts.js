@@ -3,7 +3,7 @@ const Post = require("./posts.model");
 async function getStoredPosts() {
     try {
         const storedPosts = await Post.find();
-        return storedPosts;
+        return storedPosts.reverse();
     } catch (error) {
         console.log(error);
     }
