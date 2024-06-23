@@ -8,7 +8,7 @@ function PostList() {
 
     return (
         <>
-            {posts.length > 0 && (
+            {(posts && posts.length > 0) && (
                 <ul className={classes.postlist}>
                     {posts.map((post) => (
                         <li>
@@ -23,7 +23,7 @@ function PostList() {
                     ))}
                 </ul>
             )}
-            {posts.length === 0 && (
+            {(!posts || posts.length === 0) && (
                 <div>
                     <h1>There is no post yet.</h1>
                     <h4>Add your first post by clicking New Post</h4>
