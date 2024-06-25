@@ -19,7 +19,6 @@ function MainHeader() {
           </Link>
         </p>
       </header>
-      <Login />
     </>
   );
 }
