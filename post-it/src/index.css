@@ -3,12 +3,19 @@
 }
 
 :root {
+  --secondary-color: #e6e6e6;
+  --text-color: #010101;
+  --light-gray: #6d6d6d;
+  --secondary-color-hover: #f0f0f0;
+  --text-color-hover: #1a1a1a; 
+  --gradient-background: linear-gradient(135deg, #010101, #4a4a4a, #6d6d6d, #e6e6e6);
   min-height: 100vh;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  background-image: radial-gradient(ellipse at top left, #7f50e4, #4c05d0);
+  background-color: #000000;
+  color: var(--text-color);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

@@ -1,12 +1,16 @@
 import {Outlet} from 'react-router-dom';
 
-import MainHeader from "../components/MainHeader"
+import MainHeader from "../components/MainHeader";
+// import Modal from "../components/Modal";
 
 function RootLayout(){
     return(
         <>
             <MainHeader />
-            <Outlet />
+            {/* <Modal> */}
+                <Outlet />
+                {/* <Login /> */}
+            {/* </Modal> */}
         </>
     );
 }

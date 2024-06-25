@@ -6,7 +6,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #ece1fa;
+    border-bottom: 2px solid var(--light-gray);
+    font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   }
   
   .logo {
@@ -14,7 +17,7 @@
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    color: #ece1fa;
+    color: var(--secondary-color);
   }
   
   .button {
@@ -22,8 +25,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background-color: #a990fb;
-    color: #2a2630;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     border: none;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -33,5 +36,6 @@
   }
   
   .button:hover {
-    background-color: #8c6cf7;
+    background-color: var(--secondary-color-hover);
+    color: var(--text-color-hover);
   }
