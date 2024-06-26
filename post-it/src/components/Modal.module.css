@@ -2,18 +2,22 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
   
   .modal {
     border: none;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     padding: 0;
-    margin: 1rem auto;
     overflow: hidden;
     z-index: 1;
+    margin: 5rem auto;
+    background-color: inherit; 
+    border-radius: 6px;
+    /* border: 1px solid red; */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* max-width: 50%; */
+    /* max-height: 90%; */
   }

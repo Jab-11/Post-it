@@ -1,0 +1,66 @@
+.pattern {
+  --u: 1.52vmin;
+  --c1: #444; /* Darker gray */
+  --c2: #333; /* Darker gray */
+  --c3: #222; /* Darker gray */
+  --c4: #222222; /* Darker gray */
+  --c5: #111111; /* Darker gray */
+  --gp: 50% / calc(var(--u) * 10) calc(var(--u) * 17.5);
+  --bp: calc(var(--u) * -5) calc(var(--u) * -8.75);
+  height: 100vh;
+  --bg: conic-gradient(
+        from 120deg at 74.5% 91.75%,
+        var(--c2) 0 120deg,
+        #fff0 0 360deg
+      )
+      var(--gp),
+    conic-gradient(
+        from 120deg at 25.5% 91.75%,
+        var(--c1) 0 120deg,
+        #fff0 0 360deg
+      )
+      var(--gp),
+    conic-gradient(from 60deg at 74.5% 75%, var(--c3) 0 120deg, #fff0 0 360deg)
+      var(--gp),
+    conic-gradient(from 180deg at 25.5% 75%, var(--c2) 0 120deg, #fff0 0 360deg)
+      var(--gp),
+    conic-gradient(from 120deg at 50% 67%, var(--c5) 0 120deg, #fff0 0 360deg)
+      var(--gp),
+    conic-gradient(
+        from 90deg at 50% 50%,
+        var(--c1) 0 30deg,
+        var(--c4) 0 90deg,
+        var(--c3) 0 150deg,
+        var(--c2) 0 180deg,
+        #fff0 0 360deg
+      )
+      var(--gp);
+  background: var(--bg), var(--bg), var(--c1);
+  background-position: var(--bp), var(--bp), var(--bp), var(--bp), var(--bp),
+    var(--bp), 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+}
+
+.p2 {
+    background-color: #353535;
+opacity: 1;
+background-image: radial-gradient(circle at center center, #ff6347, #353535), repeating-radial-gradient(circle at center center, #ff6347, #ff6347, 34px, transparent 68px, transparent 34px);
+background-blend-mode: multiply;
+}
+
+.p3 {
+    background-color: #1a1a1a;
+opacity: 1;
+background-image:  radial-gradient(#ff6347 1.7000000000000002px, transparent 1.7000000000000002px), radial-gradient(#ff6347 1.7000000000000002px, #1a1a1a 1.7000000000000002px);
+background-size: 68px 68px;
+background-position: 0 0,34px 34px;
+}
+.p4{
+    background-color: #0A0A0A;
+opacity: 1;
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #0A0A0A 40px ), repeating-linear-gradient( #FF634755, #FF6347 );
+}
+.p4-2{
+    background-color: #FF6347;
+opacity: 1;
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #FF6347 40px ), repeating-linear-gradient( #0A0A0A55, #0A0A0A );
+}

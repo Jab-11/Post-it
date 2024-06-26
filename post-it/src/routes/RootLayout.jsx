@@ -1,13 +1,20 @@
-import {Outlet} from 'react-router-dom';
-
+import { Outlet, Navigate } from 'react-router-dom';
 import MainHeader from "../components/MainHeader";
+import { useAuth } from '../contexts/authContext/index';
 
+function RootLayout() {
+    const { userLoggedIn } = useAuth();
 
-function RootLayout(){
-    return(
+    return (
         <>
-            <MainHeader />
-            <Outlet />
+            {userLoggedIn ? (
+                <>
+                    <MainHeader />
+                    <Outlet />
+                </>
+            ) : (
+                <Navigate to={'/login'} replace={true} />
+            )}
         </>
     );
 }
