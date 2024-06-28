@@ -7,6 +7,7 @@ import PostIt, { loader as postLoader } from "./routes/PostIt";
 import NewPost, { action as newPostAction } from "./routes/NewPost";
 import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 import RootLayout from "./routes/RootLayout";
+import HomePage from "./routes/HomePage";
 
 import LoginPage from "./routes/login/LoginPage";
 import SignupPage from "./routes/signup/SignupPage";
@@ -15,6 +16,10 @@ import { AuthProvider } from "./contexts/authContext/index";
 import "./index.css";
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />
+  },
   {
     path: "/login",
     element: <LoginPage />
