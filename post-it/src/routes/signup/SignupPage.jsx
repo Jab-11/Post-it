@@ -5,7 +5,6 @@ import "./styles.css";
 import "../login/background.css";
 import "../../utility.css";
 import Modal from "../../components/Modal";
-import Banner from "../login/Banner";
 import { useAuth } from '../../contexts/authContext/index'
 import { doCreateUserWithEmailAndPassword } from '../../authFirebase/auth'
 
