@@ -17,6 +17,7 @@ function MainHeader() {
             <MdPostAdd size={18} />
             New Post
           </Link>
+          <button className={`${classes.button} accentButton`}>Log out</button>
         </p>
       </header>
     </>

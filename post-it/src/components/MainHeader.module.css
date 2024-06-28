@@ -39,3 +39,11 @@
     background-color: var(--secondary-color-hover);
     color: var(--text-color-hover);
   }
+
+  .accentButton {
+    background-color: #FF5733;
+  }
+
+  .accentButton:hover {
+    background-color: #ff4500;
+  }
