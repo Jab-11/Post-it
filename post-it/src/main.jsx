@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <LoginPage />
   },
   {
-    path: "/",
+    path: "/posts",
     element: <RootLayout />,
     children: [
       {
