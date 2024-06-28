@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Navigate, Link, Form } from 'react-router-dom';
 
 import "./styles.css";
+import "../login/background.css";
 import "../../utility.css";
 import Modal from "../../components/Modal";
+import Banner from "../login/Banner";
 import { useAuth } from '../../contexts/authContext/index'
 import { doCreateUserWithEmailAndPassword } from '../../firebase/auth'
 
@@ -55,7 +57,8 @@ function Signup() {
     return (
         <Modal>
             {userLoggedIn && (<Navigate to={'/posts'} replace={true} />)}
-
+            
+     
             <Form method="post" className="signup-form">
                 <h1>Sign Up</h1>
                 <input
@@ -90,6 +93,7 @@ function Signup() {
                 )}
                 <p>Already have an account? <Link to="/login">Login here</Link></p>
             </Form>
+         
         </Modal>
     );
 }
