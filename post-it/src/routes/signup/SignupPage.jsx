@@ -7,7 +7,7 @@ import "../../utility.css";
 import Modal from "../../components/Modal";
 import Banner from "../login/Banner";
 import { useAuth } from '../../contexts/authContext/index'
-import { doCreateUserWithEmailAndPassword } from '../../firebase/auth'
+import { doCreateUserWithEmailAndPassword } from '../../authFirebase/auth'
 
 function Signup() {
 

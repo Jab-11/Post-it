@@ -1,7 +1,7 @@
 import "./styles.css";
 import "../../utility.css";
 import { useAuth } from '../../contexts/authContext/index';
-import { doSignInWithEmailAndPassword } from '../../firebase/auth';
+import { doSignInWithEmailAndPassword } from '../../authFirebase/auth';
 
 import { Link, Form, Navigate } from "react-router-dom";
 import { useState } from "react";

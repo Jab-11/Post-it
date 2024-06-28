@@ -2,7 +2,7 @@ import { MdPostAdd, MdMessage } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
 
 import classes from './MainHeader.module.css';
-import { doSignOut } from "../firebase/auth";
+import { doSignOut } from "../authFirebase/auth";
 
 
 function MainHeader() {
