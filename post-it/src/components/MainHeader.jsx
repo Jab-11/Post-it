@@ -16,7 +16,7 @@ function MainHeader() {
           Post-it
         </h1>
         <p>
-          <Link to="/create-post" className={classes.button}>
+          <Link to="/posts/create-post" className={classes.button}>
             <MdPostAdd size={18} />
             New Post
           </Link>
