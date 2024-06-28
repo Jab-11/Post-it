@@ -1,10 +1,13 @@
 import { MdPostAdd, MdMessage } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import classes from './MainHeader.module.css';
+import { doSignOut } from "../firebase/auth";
 
 
 function MainHeader() {
+  const navigate = useNavigate()
+
   return (
     <>
       <header className={classes.header}>
@@ -17,7 +20,9 @@ function MainHeader() {
             <MdPostAdd size={18} />
             New Post
           </Link>
-          <button className={`${classes.button} accentButton`}>Log out</button>
+          <button
+            className={`${classes.button} ${classes.accentButton}`}
+            onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>Log out</button>
         </p>
       </header>
     </>

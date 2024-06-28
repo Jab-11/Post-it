@@ -19,6 +19,11 @@
     align-items: center;
     color: var(--secondary-color);
   }
+
+  .header p{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   
   .button {
     display: inline-flex;
@@ -33,6 +38,7 @@
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;
+    height: 3rem;
   }
   
   .button:hover {
@@ -42,8 +48,14 @@
 
   .accentButton {
     background-color: #FF5733;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    margin-left: 0.5rem;
+    width: fit-content;
   }
 
   .accentButton:hover {
     background-color: #ff4500;
+    color: #eee;
   }
