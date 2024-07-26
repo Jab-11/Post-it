@@ -3,16 +3,16 @@ import "../../utility.css";
 import { useAuth } from '../../contexts/authContext/index';
 import { doSignInWithEmailAndPassword } from '../../authFirebase/auth';
 
-import { Link, Form, Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 
 function Login() {
     const { userLoggedIn } = useAuth();
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [isSigningIn, setIsSigningIn] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isSigningIn, setIsSigningIn] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     function isInputInvalid(text) {
         return !text || text.trim() === '';
@@ -22,18 +22,20 @@ function Login() {
         e.preventDefault();
 
         setErrorMessage("");
+        console.log("LOGIN START");
 
         if (isInputInvalid(email) || isInputInvalid(password)) {
             setErrorMessage("*Invalid input");
             return;
         }
 
-        if(!isSigningIn) {
-            setIsSigningIn(true)
+        if (!isSigningIn) {
+            setIsSigningIn(true);
             try {
                 await doSignInWithEmailAndPassword(email, password);
                 // console.log(user.user.metadata.createdAt);
                 // console.log(user.user.metadata.lastLoginAt);
+                console.log("LOGIN done");
             } catch (error) {
                 console.log("error");
                 console.error("Sign-in failed:", error);
@@ -42,11 +44,12 @@ function Login() {
                 setIsSigningIn(false);
             }
         }
-    }
+    };
+
     return (
         <>
             {userLoggedIn && (<Navigate to={'/posts'} replace={true} />)}
-            <Form method="post" className="login-form">
+            <form method="post" className="login-form" onSubmit={onLogin}>
                 <h1>Login</h1>
                 <input
                     type="email"
@@ -54,7 +57,7 @@ function Login() {
                     name="email"
                     placeholder="Email"
                     value={email}
-                    onChange={(e) => { setEmail(e.target.value) }} />
+                    onChange={(e) => { setEmail(e.target.value); }} />
 
                 <input
                     type="password"
@@ -62,18 +65,18 @@ function Login() {
                     name="password"
                     placeholder="Password"
                     value={password}
-                    onChange={(e) => { setPassword(e.target.value) }} />
+                    onChange={(e) => { setPassword(e.target.value); }} />
 
                 <button
-                    disabled={isSigningIn}
-                    onClick={onLogin}>
+                    type="submit"
+                    disabled={isSigningIn}>
                     {isSigningIn ? 'Logging In...' : 'Continue'}
                 </button>
                 {errorMessage && (
                     <span className='text-red-600'>{errorMessage}</span>
                 )}
-                <p>Don't have an account? <Link type="button" to="/signup">Register here</Link></p>
-            </Form>
+                <p>Don't have an account? <Link to="/signup">Register here</Link></p>
+            </form>
         </>
     );
 }

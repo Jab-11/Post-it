@@ -1,10 +1,13 @@
 .container {
   display: flex;
-  /* height: 20rem; */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page{
+  display: flex;
   width: 45rem;
-  /* background: linear-gradient(90deg, #f5f5f5, #929292); */
-  /* padding: 1px; */
-  margin-top: 7rem;
 }
 
 .banner {

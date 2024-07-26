@@ -4,7 +4,6 @@ import { Navigate, Link, Form } from 'react-router-dom';
 import "./styles.css";
 import "../login/background.css";
 import "../../utility.css";
-import Modal from "../../components/Modal";
 import { useAuth } from '../../contexts/authContext/index'
 import { doCreateUserWithEmailAndPassword } from '../../authFirebase/auth'
 
@@ -54,46 +53,58 @@ function Signup() {
         }
     }
     return (
-        <Modal>
-            {userLoggedIn && (<Navigate to={'/posts'} replace={true} />)}
-            
-     
-            <Form method="post" className="signup-form">
-                <h1>Sign Up</h1>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => { setEmail(e.target.value) }} />
+        <div className="container">
+            <div className="page">
+                {userLoggedIn && <Navigate to={"/posts"} replace={true} key="navigate"/>}
 
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => { setPassword(e.target.value) }} />
+                <Form method="post" className="signup-form">
+                    <h1>Sign Up</h1>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                        }}
+                    />
 
-                <input
-                    type="password"
-                    id="cfpassword"
-                    name="cfpassword"
-                    placeholder="Confirm Password"
-                    value={confirmPassword}
-                    onChange={(e) => { setconfirmPassword(e.target.value) }} />
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                        }}
+                    />
 
-                <button onClick={onSignup}>
-                    {isRegistering ? 'Signing Up...' : 'Sign Up'}    
-                </button>
-                {errorMessage && (
-                    <span className='text-red-600'>{errorMessage}</span>
-                )}
-                <p>Already have an account? <Link to="/login">Login here</Link></p>
-            </Form>
-         
-        </Modal>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm Password"
+                        value={confirmPassword}
+                        onChange={(e) => {
+                            setconfirmPassword(e.target.value);
+                        }}
+                    />
+
+                    <button onClick={onSignup}>
+                        {isRegistering ? "Signing Up..." : "Sign Up"}
+                    </button>
+                    {errorMessage && (
+                        <span className="text-red-600">{errorMessage}</span>
+                    )}
+                    <p>
+                        Already have an account?{" "}
+                        <Link to="/login">Login here</Link>
+                    </p>
+                </Form>
+            </div>
+        </div>
     );
 }
 

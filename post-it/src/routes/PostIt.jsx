@@ -17,6 +17,6 @@ export default PostIt;
 
 export async function loader() {
     const response = await axios.get("https://post-it-hazel.vercel.app/posts");
-
+    console.log(response.data);
     return response.data;
 }
