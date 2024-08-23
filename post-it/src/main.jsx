@@ -7,7 +7,7 @@ import {
     createRoutesFromElements,
 } from "react-router-dom";
 
-import PostIt, { loader as postLoader } from "./routes/PostIt";
+import { loader as postLoader } from "./routes/PostIt";
 import NewPost, { action as newPostAction } from "./routes/NewPost";
 import PostDetails, { loader as postDetailsLoader } from "./routes/PostDetails";
 import RootLayout from "./routes/RootLayout";
@@ -58,8 +58,7 @@ const router = createBrowserRouter(
             <Route path="/" element={<LoginPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="signup" element={<SignupPage />} />
-            <Route path="posts" element={<RootLayout />}>
-                <Route element={<PostIt />} loader={postLoader}>
+            <Route path="posts" element={<RootLayout />} loader={postLoader}>
                     <Route
                         path="create-post"
                         element={<NewPost />}
@@ -70,7 +69,6 @@ const router = createBrowserRouter(
                         element={<PostDetails />}
                         loader={postDetailsLoader}
                     />
-                </Route>
             </Route>
             <Route path="*" element={<LoginPage />} />
         </>

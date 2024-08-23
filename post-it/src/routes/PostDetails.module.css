@@ -1,29 +1,43 @@
 .details {
-    padding: 1rem 5rem;
-    width: max-content;
+    padding: 1rem 2rem;
+    width: 50%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #2b2b2b;
     background-color: #e6e6e6;
-  }
-  
-  .title{
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .details {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .details {
+        width: 100%;
+    }
+}
+
+.title {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 1.5rem auto;
-  }
-  .author {
+}
+.author {
     font-size: 1.2rem;
     font-weight: bold;
     margin-top: 1.5rem;
-  }
-  .text {
+}
+.text {
     font-size: 1.25rem;
     margin: 0.1rem 0;
-  }
-  
-  .details a {
+}
+
+.details a {
     text-decoration: none;
-  }
+}

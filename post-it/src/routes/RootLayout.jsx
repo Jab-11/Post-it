@@ -1,6 +1,8 @@
-import { Outlet, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import MainHeader from "../components/MainHeader";
 import { useAuth } from '../contexts/authContext/index';
+
+import PostIt from "./PostIt";
 
 function RootLayout() {
     const { userLoggedIn } = useAuth();
@@ -10,7 +12,7 @@ function RootLayout() {
             {userLoggedIn ? (
                 <>
                     <MainHeader />
-                    <Outlet />
+                    <PostIt/>
                 </>
             ) : (
                 <Navigate to={'/login'} replace={true} />

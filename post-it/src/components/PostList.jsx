@@ -5,7 +5,6 @@ import { useLoaderData } from "react-router-dom";
 
 function PostList() {
     const posts = useLoaderData();
-
     return (
         <>
             {(posts && posts.length > 0) && (

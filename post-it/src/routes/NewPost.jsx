@@ -51,5 +51,5 @@ export async function action({ request }) {
         console.log(error);
     }
 
-    return redirect("/");
+    return redirect("/posts");
 }
